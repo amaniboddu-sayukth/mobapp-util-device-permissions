@@ -1,20 +1,20 @@
-const PERMISSION_TITLE = "Permissions";
-const CAMERA = "Camera";
-const LOCATION = "Location";
-const SMS = "SMS";
-const PHONE = "Phone";
-const CONTINUE = "Continue";
-const SORRY = "Sorry";
-const SOME_PERMISSIONS_DENIED =
+const permissionTitle = "Permissions";
+const camera = "Camera";
+const location = "Location";
+const sms = "SMS";
+const phone = "Phone";
+const continueText = "Continue";
+const sorry = "Sorry";
+const somePermissionsDenied =
     "Some Permissions are denied please Allow All the permissions";
-const OPEN_SETTINGS = "Open Settings";
-const SOME_PERMISSIONS_PERMANENTLY_DENIED =
+const openSettings = "Open Settings";
+const somePermissionsPermanentlyDenied =
     "Some Permissions are permanently denied please open settings to allow the remaining permissions";
-const THANK_YOU = "Thank you";
-const ALL_PERMISSIONS_GRANTED =
+const thankYou = "Thank you";
+const allPermissionsGranted =
     "All Permissions are granted, we will provide you great functionality !";
-const GRANTED = "Granted";
-const DENIED = "Denied";
-const PERMANENTLY_DENIED = "Permanently Denied";
-const RESTRICTED = "Restricted";
-const LIMITED = "Limited";
+const granted = "Granted";
+const denied = "Denied";
+const permanentlyDenied = "Permanently Denied";
+const restricted = "Restricted";
+const limited = "Limited";

@@ -59,7 +59,7 @@ class _PermissionScreenState extends State<PermissionScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          widget.permissionScreenTitle ?? PERMISSION_TITLE,
+          widget.permissionScreenTitle ?? permissionTitle,
           style: TextStyle(
               color: widget.permissionScreenTitleColor ?? Colors.white),
         ),
@@ -79,7 +79,7 @@ class _PermissionScreenState extends State<PermissionScreen> {
                       Visibility(
                         visible: parameters.contains(PermissionType.camera),
                         child: permissionCardWithImage(
-                          permissionName: CAMERA,
+                          permissionName: camera,
                           permissionIcon: Icons.camera_alt,
                           permissionStatusIcon: permissionStatusIcon(
                               permissionController.cameraStatus),
@@ -97,7 +97,7 @@ class _PermissionScreenState extends State<PermissionScreen> {
                       Visibility(
                         visible: parameters.contains(PermissionType.location),
                         child: permissionCardWithImage(
-                          permissionName: LOCATION,
+                          permissionName: location,
                           permissionIcon: Icons.location_on,
                           permissionStatusIcon: permissionStatusIcon(
                               permissionController.locationStatus),
@@ -115,7 +115,7 @@ class _PermissionScreenState extends State<PermissionScreen> {
                       Visibility(
                         visible: parameters.contains(PermissionType.sms),
                         child: permissionCardWithImage(
-                          permissionName: SMS,
+                          permissionName: sms,
                           permissionIcon: Icons.sms,
                           permissionStatusIcon: permissionStatusIcon(
                               permissionController.smsStatus),
@@ -133,7 +133,7 @@ class _PermissionScreenState extends State<PermissionScreen> {
                       Visibility(
                         visible: parameters.contains(PermissionType.phone),
                         child: permissionCardWithImage(
-                          permissionName: PHONE,
+                          permissionName: phone,
                           permissionIcon: Icons.phone,
                           permissionStatusIcon: permissionStatusIcon(
                               permissionController.phoneStatus),
@@ -806,7 +806,7 @@ class _PermissionScreenState extends State<PermissionScreen> {
           ),
           alignment: Alignment.center,
           child: Text(
-            CONTINUE,
+            continueText,
             style: boldTextStyle(
                 size: widget.continueBtnFontSize ?? 18,
                 color: widget.continueBtnColor ?? Colors.white),
@@ -827,8 +827,8 @@ class _PermissionScreenState extends State<PermissionScreen> {
         context: context,
         confirmBtnColor: widget.confirmBtnColor ?? const Color(0xff16558F),
         type: QuickAlertType.error,
-        title: SORRY,
-        text: SOME_PERMISSIONS_DENIED,
+        title: sorry,
+        text: somePermissionsDenied,
       );
     } else if (permissionController.allPermissionStatus ==
             AllPermissionsStatus.SOME_PERMISSIONS_PERMANENTLY_DENIED ||
@@ -839,9 +839,9 @@ class _PermissionScreenState extends State<PermissionScreen> {
           context: context,
           confirmBtnColor: widget.confirmBtnColor ?? const Color(0xff16558F),
           type: QuickAlertType.error,
-          confirmBtnText: OPEN_SETTINGS,
-          title: SORRY,
-          text: SOME_PERMISSIONS_PERMANENTLY_DENIED,
+          confirmBtnText: openSettings,
+          title: sorry,
+          text: somePermissionsPermanentlyDenied,
           onConfirmBtnTap: () => {
                 openAppSettings(),
                 Navigator.pop(context),
@@ -854,8 +854,8 @@ class _PermissionScreenState extends State<PermissionScreen> {
           context: context,
           confirmBtnColor: widget.confirmBtnColor ?? const Color(0xff16558F),
           type: QuickAlertType.success,
-          title: THANK_YOU,
-          text: ALL_PERMISSIONS_GRANTED,
+          title: thankYou,
+          text: allPermissionsGranted,
           onConfirmBtnTap: () => {
                 Navigator.pop(context),
                 widget.onConfirmCallBack(PermissionStage.completed.name),

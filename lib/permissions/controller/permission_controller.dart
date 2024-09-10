@@ -428,15 +428,15 @@ abstract class PermissionControllerBase with Store {
   String permissionStatusName(PermissionStatus permissionStatus) {
     try {
       if (permissionStatus.isGranted) {
-        return GRANTED;
+        return granted;
       } else if (permissionStatus.isDenied) {
-        return DENIED;
+        return denied;
       } else if (permissionStatus.isPermanentlyDenied) {
-        return PERMANENTLY_DENIED;
+        return permanentlyDenied;
       } else if (permissionStatus.isRestricted) {
-        return RESTRICTED;
+        return restricted;
       } else {
-        return LIMITED;
+        return limited;
       }
     } catch (e) {
       rethrow;
